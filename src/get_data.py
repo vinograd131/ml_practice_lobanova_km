@@ -36,8 +36,7 @@ def extract(zip_path: Path, member: str, out_dir: Path) -> Path:
         names = zf.namelist()
         if member not in names:
             raise FileNotFoundError(
-                f"В архиве {zip_path} нет файла {member!r}. "
-                f"Есть: {names}"
+                f"В архиве {zip_path} нет файла {member!r}. Есть: {names}"
             )
         zf.extract(member, out_dir)
     return out_dir / member
@@ -53,13 +52,9 @@ def validate(csv_path: Path) -> pd.DataFrame:
 
     n_rows, n_cols = df.shape
     if n_rows != EXPECTED_ROWS:
-        raise ValueError(
-            f"Ожидалось {EXPECTED_ROWS} строк, получено {n_rows}"
-        )
+        raise ValueError(f"Ожидалось {EXPECTED_ROWS} строк, получено {n_rows}")
     if n_cols != EXPECTED_COLS:
-        raise ValueError(
-            f"Ожидалось {EXPECTED_COLS} колонок, получено {n_cols}"
-        )
+        raise ValueError(f"Ожидалось {EXPECTED_COLS} колонок, получено {n_cols}")
 
     if TARGET not in df.columns:
         raise ValueError(f"Нет целевой колонки {TARGET!r}")

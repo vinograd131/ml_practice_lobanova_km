@@ -30,7 +30,7 @@ def load_data(path: Path) -> pd.DataFrame:
             f"Нет файла {path}. Сначала запустите: uv run python -m src.get_data"
         )
     df = pd.read_csv(path, sep=";")
-    # При eda выявлено, что в исходных данных у одной колонки в конце имени стоит табуляция
+    # В исходных данных у одной колонки в конце имени стоит табуляция
     df.columns = df.columns.str.strip()
     return df
 
