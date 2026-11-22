@@ -12,7 +12,7 @@ Python 3.13). Ниже приведён реальный вывод команд
 ```powershell
 uv run python -m src.get_data
 ```
-![img.png](data/get_data_output.png)
+![Загруза данных](images/get_data_output.png)
 
 Скрипт скачивает архив с UCI, распаковывает `data.csv` в `data/raw/` и
 проверяет его: файл существует и не пустой, размер 4424 × 37, есть колонка
@@ -21,7 +21,7 @@ uv run python -m src.get_data
 
 Содержимое `data/raw/` после запуска:
 
-![img.png](images/img3.png)
+![Содержимое data/raw/](images/data_raw.png)
 
 ## 2. Проверка кода: Ruff и pre-commit
 
@@ -32,7 +32,7 @@ uv run python -m src.get_data
 
 ### 2.1. Первый запуск. Были найдены нарушения
 
-![img.png](images/img.png)
+![Первый запуск](images/first_pre_commit.png)
 
 Что было найдено и как исправлено:
 
@@ -46,11 +46,11 @@ uv run python -m src.get_data
 
 ### 2.2. Повторный запуск. В нем все проверки пройдены
 
-![img.png](images/img1.png)
+![Второй запуск](images/second_pre_commit.png)
 
 ## 3. Обучение
 
 ```powershell
 uv run python -m src.train
 ```
-![img.png](images/img2.png)
+![ml](images/ml_result.png)
